@@ -25,4 +25,3 @@ if __name__ == "__main__":
     product_category_pairs, products_with_no_categories = get_product_category_pairs('products.csv', 'categories.csv')
     product_category_pairs.show()
     products_with_no_categories.show()
-  
