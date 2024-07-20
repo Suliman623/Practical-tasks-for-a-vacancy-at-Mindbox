@@ -6,8 +6,8 @@ def get_product_category_pairs(products_csv, categories_csv):
     spark = SparkSession.builder.appName("ProductCategoryPairs").getOrCreate()
     
     # Read CSV files into DataFrames
-    products_df = spark.read.csv(products_csv, header=True)
-    categories_df = spark.read.csv(categories_csv, header=True)
+    products_df = spark.read.csv(products_csv, header=True, inferSchema=True)
+    categories_df = spark.read.csv(categories_csv, header=True, inferSchema=True)
     
     # Perform left outer join to get all product-category pairs and products with no categories
     product_category_df = products_df.join(categories_df, "product_id", "left_outer")
