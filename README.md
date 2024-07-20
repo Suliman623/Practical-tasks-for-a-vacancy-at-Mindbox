@@ -1,7 +1,7 @@
 # Practical Tasks for a Vacancy at Mindbox
 
 ## Overview
-This repository contains solutions for two practical tasks required for the application process at Mindbox. The tasks demonstrate development experience and the ability to handle data manipulation using PySpark.
+This repository contains solutions for two practical tasks required for the application process at Mindbox. The tasks demonstrate creating a library in Python to calculate the area of various shapes and the ability to handle data manipulation using PySpark.
 
 ## Task 1: Shape Area Calculator
 
