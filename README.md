@@ -25,7 +25,7 @@ from shape_area_calculator import Circle, Triangle
 circle = Circle(radius=5)
 print("Circle Area:", circle.area())
 
-triangle = Triangle(a=3, b=4, c=5)
+triangle = Triangle(side1=3, side2=4, side3=5)
 print("Triangle Area:", triangle.area())
 print("Is Right Triangle:", triangle.is_right_triangle())
 ```
@@ -45,18 +45,9 @@ This task involves creating a PySpark application to handle product and category
 ### Usage
 To run the PySpark application:
 ```python
-from pyspark.sql import SparkSession
-from product_category_pairs import get_product_category_pairs, get_products_without_categories
+from product_category_pairs import get_product_category_pairs
 
-spark = SparkSession.builder.appName("ProductCategoryPairs").getOrCreate()
-
-products_df = spark.read.csv("products.csv", header=True, inferSchema=True)
-categories_df = spark.read.csv("categories.csv", header=True, inferSchema=True)
-
-product_category_pairs_df = get_product_category_pairs(products_df, categories_df)
-product_category_pairs_df.show()
-
-products_without_categories_df = get_products_without_categories(products_df, categories_df)
-products_without_categories_df.show()
-
-
+# Example usage
+product_category_pairs, products_with_no_categories = get_product_category_pairs('products.csv', 'categories.csv')
+product_category_pairs.show()
+products_with_no_categories.show()
